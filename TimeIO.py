@@ -6,7 +6,6 @@ def WriteFile():
     #เขียน binary file ขนาดใหญ่( 1 GB )
     with open( 'data.bin', 'wb' ) as file:
         file.write( b'\x00' * ( 1024 ** 3 ) )
-    file_size = os.path.getsize( 'data.bin' )
 
 #CPU-bound operation        
 def Factorial( number ):
