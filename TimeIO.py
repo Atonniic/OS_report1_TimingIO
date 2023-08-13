@@ -18,11 +18,11 @@ def TimeTaken( func ):
     start = timeit.default_timer()
     func()
     end = timeit.default_timer()
-    print(f"Time taken: {end - start} seconds")
+    return end - start
 
 #Call function และวัดเวลาที่ใช้
-TimeTaken( WriteFile )
-TimeTaken( lambda: Factorial( 994 ) )
+print(f"Time taken ( I/O-bound ): { TimeTaken( WriteFile ) } seconds")
+print(f"Time taken ( CPU-bound ): { TimeTaken( lambda: Factorial( 994 ) ) } seconds")
 
 #ลบ data.bin ออกจากไดเร็คทอรี่
 os.remove('data.bin')
